@@ -1,7 +1,7 @@
-# nativescript-keyboard-opening
+# @bezlepkin/nativescript-keyboard-opening
 
 ```javascript
-npm install nativescript-keyboard-opening
+npm install @bezlepkin/nativescript-keyboard-opening
 ```
 
 ## Usage
