@@ -1,0 +1,65 @@
+{
+  "name": "nativescript-keyboard-opening",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/nativescript-keyboard-opening",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "options": {
+        "outputPath": "dist/packages/nativescript-keyboard-opening",
+        "tsConfig": "packages/nativescript-keyboard-opening/tsconfig.json",
+        "packageJson": "packages/nativescript-keyboard-opening/package.json",
+        "main": "packages/nativescript-keyboard-opening/index.d.ts",
+        "assets": [
+          "packages/nativescript-keyboard-opening/*.md",
+          "packages/nativescript-keyboard-opening/index.d.ts",
+          "LICENSE",
+          {
+            "glob": "**/*",
+            "input": "packages/nativescript-keyboard-opening/platforms/",
+            "output": "./platforms/"
+          }
+        ],
+        "dependsOn": [
+          {
+            "target": "build.all",
+            "projects": "dependencies"
+          }
+        ]
+      }
+    },
+    "build.all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["node tools/scripts/build-finish.ts nativescript-keyboard-opening"],
+        "parallel": false
+      },
+      "outputs": ["dist/packages/nativescript-keyboard-opening"],
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "projects": "dependencies"
+        },
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ]
+    },
+    "focus": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-keyboard-opening"],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/nativescript-keyboard-opening/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}
