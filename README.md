@@ -1,4 +1,4 @@
-- [nativescript-keyboard-opening](packages/nativescript-keyboard-opening/README.md)
+- [@bezlepkin/nativescript-keyboard-opening](packages/nativescript-keyboard-opening/README.md)
 
 # How to use?
 

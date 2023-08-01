@@ -5,7 +5,7 @@
   "repository": "<fill-your-repository-here>",
   "dependencies": {
     "@nativescript/core": "file:../../node_modules/@nativescript/core",
-    "nativescript-keyboard-opening": "file:../../packages/nativescript-keyboard-opening"
+    "@bezlepkin/nativescript-keyboard-opening": "file:../../packages/nativescript-keyboard-opening"
   },
   "devDependencies": {
     "@nativescript/android": "~8.4.0",

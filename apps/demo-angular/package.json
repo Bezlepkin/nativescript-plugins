@@ -2,7 +2,8 @@
   "main": "./src/main.ts",
   "dependencies": {
     "@nativescript/core": "file:../../node_modules/@nativescript/core",
-    "nativescript-keyboard-opening": "file:../../dist/packages/nativescript-keyboard-opening"
+    "nativescript-keyboard-opening": "file:../../dist/packages/nativescript-keyboard-opening",
+    "@bezlepkin/nativescript-keyboard-opening": "file:../../dist/packages/nativescript-keyboard-opening"
   },
   "devDependencies": {
     "@nativescript/android": "~8.4.0",

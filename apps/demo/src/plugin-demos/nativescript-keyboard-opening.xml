@@ -1,14 +1,14 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
-    <Page.actionBar>
-        <ActionBar title="nativescript-keyboard-opening" icon="" class="action-bar">
-        </ActionBar>
-    </Page.actionBar>
-    <StackLayout class="p-20">
-        <ScrollView class="h-full">
-          <StackLayout>
-            <Button text="Test nativescript-keyboard-opening" tap="{{ testIt }}" class="btn btn-primary"/>
+  <Page.actionBar>
+    <ActionBar title="nativescript-keyboard-opening" icon="" class="action-bar">
+    </ActionBar>
+  </Page.actionBar>
 
-          </StackLayout>
-        </ScrollView>
+  <GridLayout rows="*,auto" class="p-20">
+    <StackLayout id="form" row="1" verticalAlignment="center">
+      <TextField backgroundColor="#f1f1f1" padding="12,18,12,18" borderRadius="8" marginBottom="16" />
+      <Button text="Button" backgroundColor="blue" color="white" padding="12,18,12,18"
+        borderRadius="8" />
     </StackLayout>
+  </GridLayout>
 </Page>
