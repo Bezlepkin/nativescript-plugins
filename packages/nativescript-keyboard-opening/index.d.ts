@@ -1,7 +1,4 @@
-import { NativescriptKeyboardOpeningCommon } from './common';
+import { KeyboardOpeningCommon } from './common';
 
-export declare class NativescriptKeyboardOpening extends NativescriptKeyboardOpeningCommon {}
-
-export interface KeyboardOpeningManager extends NativescriptKeyboardOpeningCommon {}
-
-export function nativescriptKeyboardOpening(): KeyboardOpeningManager;
+export declare class KeyboardOpening extends KeyboardOpeningCommon {}
+export function keyboardOpening(): KeyboardOpening;

@@ -1,9 +1,9 @@
 import { Application } from '@nativescript/core';
-import { NativescriptKeyboardOpeningCommon } from './common';
+import { KeyboardOpeningCommon } from './common';
 
 let KeyboardOpeningInstance: KeyboardOpeningManager;
 
-class KeyboardOpeningManager extends NativescriptKeyboardOpeningCommon {
+class KeyboardOpeningManager extends KeyboardOpeningCommon {
   constructor() {
     super();
     this.trackKeyboard();
@@ -33,7 +33,7 @@ class KeyboardOpeningManager extends NativescriptKeyboardOpeningCommon {
   }
 }
 
-export const nativescriptKeyboardOpening = function (): KeyboardOpeningManager {
+export const keyboardOpening = function (): KeyboardOpeningManager {
   if (KeyboardOpeningInstance) {
     return KeyboardOpeningInstance;
   }
