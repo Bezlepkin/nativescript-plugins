@@ -1,0 +1,13 @@
+<resources>
+    <string name="title_activity_photo_editor">PhotoEditorActivity</string>
+    <string name="image">Изображение</string>
+    <string name="close">Закрыть</string>
+    <string name="cancel">Отменить</string>
+    <string name="crop">Обрезать</string>
+    <string name="draw">Рисовать</string>
+    <string name="text">Текст</string>
+    <string name="apply">Применить</string>
+    <string name="share">Поделитсья</string>
+    <string name="save">Сохранить</string>
+    <string name="title_activity_photo_crop">PhotoCropActivity</string>
+</resources>

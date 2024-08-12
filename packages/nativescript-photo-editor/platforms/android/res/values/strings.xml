@@ -1,0 +1,13 @@
+<resources>
+    <string name="title_activity_photo_editor">PhotoEditorActivity</string>
+    <string name="image">Image</string>
+    <string name="close">Close</string>
+    <string name="cancel">Cancel</string>
+    <string name="crop">Crop</string>
+    <string name="draw">Draw</string>
+    <string name="text">Text</string>
+    <string name="apply">Apply</string>
+    <string name="share">Share</string>
+    <string name="save">Save</string>
+    <string name="title_activity_photo_crop">PhotoCropActivity</string>
+</resources>

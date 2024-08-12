@@ -1,0 +1,65 @@
+{
+  "name": "nativescript-photo-editor",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/nativescript-photo-editor",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "options": {
+        "outputPath": "dist/packages/nativescript-photo-editor",
+        "tsConfig": "packages/nativescript-photo-editor/tsconfig.json",
+        "packageJson": "packages/nativescript-photo-editor/package.json",
+        "main": "packages/nativescript-photo-editor/index.d.ts",
+        "assets": [
+          "packages/nativescript-photo-editor/*.md",
+          "packages/nativescript-photo-editor/index.d.ts",
+          "LICENSE",
+          {
+            "glob": "**/*",
+            "input": "packages/nativescript-photo-editor/platforms/",
+            "output": "./platforms/"
+          }
+        ],
+        "dependsOn": [
+          {
+            "target": "build.all",
+            "projects": "dependencies"
+          }
+        ]
+      }
+    },
+    "build.all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["node tools/scripts/build-finish.ts nativescript-photo-editor"],
+        "parallel": false
+      },
+      "outputs": ["dist/packages/nativescript-photo-editor"],
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "projects": "dependencies"
+        },
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ]
+    },
+    "focus": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-photo-editor"],
+        "parallel": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/nativescript-photo-editor/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}
