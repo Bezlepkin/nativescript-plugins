@@ -1,0 +1,15 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+  <Page.actionBar>
+    <ActionBar title="nativescript-photo-editor" icon="" class="action-bar">
+    </ActionBar>
+  </Page.actionBar>
+  <StackLayout class="p-20">
+    <ScrollView class="h-full">
+      <StackLayout>
+        <Image widgth="100%" height="400" src="{{ image }}" />
+        <Button text="Select and edit a photo" tap="{{ onSelectPhotoTap }}" class="btn btn-primary" />
+
+      </StackLayout>
+    </ScrollView>
+  </StackLayout>
+</Page>

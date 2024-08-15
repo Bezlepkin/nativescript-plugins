@@ -61,6 +61,20 @@ module.exports = {
     // packages
     // build output is always in dist/packages
     '@nativescript': {
+      // nativescript-keyboard-opening
+      'nativescript-keyboard-opening': {
+        build: {
+          script: 'nx run nativescript-keyboard-opening:build.all',
+          description: 'nativescript-keyboard-opening: Build',
+        },
+      },
+      // nativescript-photo-editor
+      'nativescript-photo-editor': {
+        build: {
+          script: 'nx run nativescript-photo-editor:build.all',
+          description: 'nativescript-photo-editor: Build',
+        },
+      },
       'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
@@ -71,6 +85,14 @@ module.exports = {
       description: '_____________  Focus (VS Code supported)  _____________',
     },
     focus: {
+      'nativescript-keyboard-opening': {
+        script: 'nx run nativescript-keyboard-opening:focus',
+        description: 'Focus on nativescript-keyboard-opening',
+      },
+      'nativescript-photo-editor': {
+        script: 'nx run nativescript-photo-editor:focus',
+        description: 'Focus on nativescript-photo-editor',
+      },
       reset: {
         script: 'nx g @nativescript/plugin-tools:focus-packages',
         description: 'Reset Focus',

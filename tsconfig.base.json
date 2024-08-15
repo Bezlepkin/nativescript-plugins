@@ -21,9 +21,8 @@
     ],
     "paths": {
       "@demo/shared": ["tools/demo/index.ts"],
-      "nativescript-keyboardopening": ["packages/nativescript-keyboardopening/index.d.ts"],
-      "@nativescript/nativescript-keyboard-opening": ["packages/nativescript-keyboard-opening/index.d.ts"],
-      "nativescript-keyboard-opening": ["packages/nativescript-keyboard-opening/index.d.ts"]
+      "@bezlepkin/nativescript-photo-editor": ["packages/nativescript-photo-editor/index.d.ts"],
+      "@bezlepkin/nativescript-keyboard-opening": ["packages/nativescript-keyboard-opening/index.d.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

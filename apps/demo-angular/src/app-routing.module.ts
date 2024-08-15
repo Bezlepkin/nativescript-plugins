@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'nativescript-keyboard-opening', loadChildren: () => import('./plugin-demos/nativescript-keyboard-opening.module').then((m) => m.NativescriptKeyboardOpeningModule) },
+  { path: 'nativescript-photo-editor', loadChildren: () => import('./plugin-demos/nativescript-photo-editor.module').then((m) => m.NativescriptPhotoEditorModule) },
 ];
 
 @NgModule({

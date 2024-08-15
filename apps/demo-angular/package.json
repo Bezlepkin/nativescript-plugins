@@ -3,6 +3,7 @@
   "dependencies": {
     "@nativescript/core": "file:../../node_modules/@nativescript/core",
     "nativescript-keyboard-opening": "file:../../dist/packages/nativescript-keyboard-opening",
+    "@bezlepkin/nativescript-photo-editor": "file:../../dist/packages/nativescript-photo-editor",
     "@bezlepkin/nativescript-keyboard-opening": "file:../../dist/packages/nativescript-keyboard-opening"
   },
   "devDependencies": {

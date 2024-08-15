@@ -6,9 +6,9 @@
 //}
 
 android {
-  compileSdkVersion 32
+  compileSdkVersion 33
   defaultConfig {
-    minSdkVersion 21
+    minSdkVersion 25
     targetSdkVersion 32
     generatedDensities = []
   }

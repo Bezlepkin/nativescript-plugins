@@ -9,5 +9,8 @@ export class HomeComponent {
     {
       name: 'nativescript-keyboard-opening',
     },
+    {
+      name: 'nativescript-photo-editor',
+    },
   ];
 }
