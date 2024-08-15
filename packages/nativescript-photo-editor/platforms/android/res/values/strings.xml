@@ -9,5 +9,6 @@
     <string name="apply">Apply</string>
     <string name="share">Share</string>
     <string name="save">Save</string>
+    <string name="text_hint">Add text</string>
     <string name="title_activity_photo_crop">PhotoCropActivity</string>
 </resources>

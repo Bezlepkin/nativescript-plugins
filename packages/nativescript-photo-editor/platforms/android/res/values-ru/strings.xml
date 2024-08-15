@@ -9,5 +9,6 @@
     <string name="apply">Применить</string>
     <string name="share">Поделитсья</string>
     <string name="save">Сохранить</string>
+    <string name="text_hint">Введите текст</string>
     <string name="title_activity_photo_crop">PhotoCropActivity</string>
 </resources>
