@@ -1,0 +1,49 @@
+{
+  "name": "@bezlepkin/nativescript-fab",
+  "version": "1.0.0",
+  "description": "A NativeScript plugin for Material Design Floating Action Button.",
+  "main": "fab",
+  "typings": "index.d.ts",
+  "nativescript": {
+    "platforms": {
+      "ios": "7.0.0",
+      "android": "7.0.0"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nstudio/nativescript-floatingactionbutton"
+  },
+  "lint-staged": {
+    "**/*.{js, css, ts, json, scss, html, xml, md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run tslint"
+    }
+  },
+  "keywords": [
+    "ecosystem:nativescript",
+    "NativeScript",
+    "javascript",
+    "material design",
+    "FAB",
+    "floating-action-button",
+    "android",
+    "ios",
+    "nStudio"
+  ],
+  "author": {
+    "name": "Brad Martin",
+    "url": "https://github.com/bradmartin",
+    "email": "bmartin@nstudio.io"
+  },
+  "license": "MIT",
+  "bugs": "https://github.com/nstudio/nativescript-floatingactionbutton/issues",
+  "homepage": "https://github.com/nstudio/nativescript-floatingactionbutton",
+  "readmeFilename": "README.md"
+}

@@ -1,0 +1,64 @@
+{
+  "name": "nativescript-fab",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/nativescript-fab",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "options": {
+        "outputPath": "dist/packages/nativescript-fab",
+        "tsConfig": "packages/nativescript-fab/tsconfig.json",
+        "packageJson": "packages/nativescript-fab/package.json",
+        "main": "packages/nativescript-fab/index.d.ts",
+        "assets": [
+          "packages/nativescript-fab/*.md",
+          "packages/nativescript-fab/index.d.ts",
+          "LICENSE",
+          {
+            "glob": "**/*",
+            "input": "packages/nativescript-fab/platforms/",
+            "output": "./platforms/"
+          }
+        ],
+        "dependsOn": [
+          {
+            "target": "build.all",
+            "projects": "dependencies"
+          }
+        ]
+      }
+    },
+    "build.all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["node tools/scripts/build-finish.ts nativescript-fab"],
+        "parallel": false
+      },
+      "outputs": ["{workspaceRoot}/dist/packages/nativescript-fab"],
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "dependencies": true
+        },
+        {
+          "target": "build"
+        }
+      ]
+    },
+    "focus": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-fab"],
+        "parallel": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/nativescript-fab/**/*.ts"]
+      }
+    }
+  }
+}

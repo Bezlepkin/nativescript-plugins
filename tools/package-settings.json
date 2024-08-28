@@ -1,0 +1,17 @@
+{
+  "name": "@bezlepkin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bezlepkin/nativescript-plugins.git"
+  },
+  "keywords": ["NativeScript", "JavaScript", "TypeScript", "iOS", "Android"],
+  "author": {
+    "name": "Igor Bezlepkin",
+    "email": "hellobezlepkin@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/Bezlepkin/nativescript-plugins/issues"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/Bezlepkin/nativescript-plugins"
+}

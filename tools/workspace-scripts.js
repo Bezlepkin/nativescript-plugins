@@ -55,12 +55,12 @@ module.exports = {
       },
     },
     '⚙️': {
-      script: `npx cowsay "@nativescript/* packages will keep your ⚙️ cranking"`,
-      description: '_____________  @nativescript/*  _____________',
+      script: `npx cowsay "@bezlepkin/* packages will keep your ⚙️ cranking"`,
+      description: '_____________  @bezlepkin/*  _____________',
     },
     // packages
     // build output is always in dist/packages
-    '@nativescript': {
+    '@bezlepkin': {
       // nativescript-keyboard-opening
       'nativescript-keyboard-opening': {
         build: {
@@ -73,6 +73,13 @@ module.exports = {
         build: {
           script: 'nx run nativescript-photo-editor:build.all',
           description: 'nativescript-photo-editor: Build',
+        },
+      },
+      // @bezlepkin/nativescript-fab
+      'nativescript-fab': {
+        build: {
+          script: 'nx run nativescript-fab:build.all',
+          description: 'nativescript/nativescript-fab: Build',
         },
       },
       'build-all': {
@@ -92,6 +99,10 @@ module.exports = {
       'nativescript-photo-editor': {
         script: 'nx run nativescript-photo-editor:focus',
         description: 'Focus on nativescript-photo-editor',
+      },
+      'nativescript-fab': {
+        script: 'nx run nativescript-fab:focus',
+        description: 'Focus on nativescript/nativescript-fab',
       },
       reset: {
         script: 'nx g @nativescript/plugin-tools:focus-packages',
