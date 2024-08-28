@@ -1,5 +1,6 @@
 - [@bezlepkin/nativescript-keyboard-opening](packages/nativescript-keyboard-opening/README.md)
 - [@bezlepkin/nativescript-photo-editor](packages/nativescript-photo-editor/README.md)
+- [@bezlepkin/nativescript-fab](packages/nativescript-fab/README.md)
 
 # How to use?
 
