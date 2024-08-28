@@ -4,10 +4,11 @@
     "@nativescript/core": "file:../../node_modules/@nativescript/core",
     "nativescript-keyboard-opening": "file:../../dist/packages/nativescript-keyboard-opening",
     "@bezlepkin/nativescript-photo-editor": "file:../../dist/packages/nativescript-photo-editor",
-    "@bezlepkin/nativescript-keyboard-opening": "file:../../dist/packages/nativescript-keyboard-opening"
+    "@bezlepkin/nativescript-keyboard-opening": "file:../../dist/packages/nativescript-keyboard-opening",
+    "@nativescript/nativescript-fab": "file:../../dist/packages/nativescript-fab"
   },
   "devDependencies": {
-    "@nativescript/android": "~8.4.0",
-    "@nativescript/ios": "~8.4.0"
+    "@nativescript/android": "~8.8.0",
+    "@nativescript/ios": "~8.8.0"
   }
 }
