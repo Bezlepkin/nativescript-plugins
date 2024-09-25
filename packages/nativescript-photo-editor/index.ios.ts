@@ -1,5 +1,5 @@
-import { Frame, ImageAsset, ImageSource } from '@nativescript/core';
-import { EditPhotoOptions, PhotoEditorCommon, PhotoEditorControl } from './common';
+import { Frame, ImageSource } from '@nativescript/core';
+import { PhotoEditorCommon, PhotoEditorException, PhotoEditorOptions } from './common';
 
 export class PhotoEditor extends PhotoEditorCommon {
   private _delegate: PhotoEditorDelegateImpl;
@@ -8,13 +8,18 @@ export class PhotoEditor extends PhotoEditorCommon {
     super();
   }
 
-  public editPhoto(options: EditPhotoOptions) {
+  public editPhoto(options: PhotoEditorOptions) {
     try {
+      if (!options.image) {
+        throw new Error('Required option "image" no passed');
+      }
+
       const photoEditorViewController = PhotoEditorViewController.alloc().init();
 
       return new Promise<ImageSource>((resolve, reject) => {
         this._delegate = PhotoEditorDelegateImpl.initWithOwner(new WeakRef(this), resolve, reject);
-        photoEditorViewController.image = options.imageSource.ios;
+
+        photoEditorViewController.image = options.image.ios;
         photoEditorViewController.photoEditorDelegate = this._delegate;
 
         let viewController: UIViewController;
@@ -22,24 +27,12 @@ export class PhotoEditor extends PhotoEditorCommon {
 
         if (topMostFrame) {
           viewController = topMostFrame.currentPage && topMostFrame.currentPage.ios;
-
-          if (viewController) {
-            while (viewController.parentViewController) {
-              // find top-most view controler
-              viewController = viewController.parentViewController;
-            }
-            while (viewController.presentedViewController) {
-              // find last presented modal
-              viewController = viewController.presentedViewController;
-            }
-
-            photoEditorViewController.modalPresentationStyle = UIModalPresentationStyle.FullScreen;
-            viewController.presentViewControllerAnimatedCompletion(photoEditorViewController, true, null);
-          }
+          photoEditorViewController.modalPresentationStyle = UIModalPresentationStyle.FullScreen;
+          viewController.presentViewControllerAnimatedCompletion(photoEditorViewController, true, null);
         }
       });
     } catch (e) {
-      console.error(`PhotoEditor plugin error: ${e.message}`);
+      throw new PhotoEditorException(`PhotoEditor plugin error: ${e.message}`);
     }
   }
 }

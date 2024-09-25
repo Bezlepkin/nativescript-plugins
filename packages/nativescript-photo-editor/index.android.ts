@@ -1,5 +1,5 @@
 import { AndroidActivityResultEventData, Application, File, ImageAsset, knownFolders, path } from '@nativescript/core';
-import { EditPhotoOptions, PhotoEditorCommon, PhotoEditorException } from './common';
+import { PhotoEditorCommon, PhotoEditorException, PhotoEditorOptions } from './common';
 
 declare const com: any;
 
@@ -10,19 +10,17 @@ export class PhotoEditor extends PhotoEditorCommon {
   private _currentResolve: (result: ImageAsset) => void;
   private _currentReject: (e: Error) => void;
 
-  editPhoto(options: EditPhotoOptions): Promise<ImageAsset> {
-    if (!options.imageSource) {
+  editPhoto(options: PhotoEditorOptions): Promise<ImageAsset> {
+    if (!options.image) {
       throw new PhotoEditorException('PhotoEditor error. Required option "imageSource" no passed');
     }
-
-    options.hiddenControls = options.hiddenControls || [];
 
     return new Promise<ImageAsset>((resolve, reject) => {
       this._currentResolve = resolve;
       this._currentReject = reject;
       this._tempFilepath = path.join(knownFolders.temp().path, `${Math.floor(new Date().getTime() / 1000)}.jpg`);
 
-      options.imageSource.saveToFile(this._tempFilepath, 'jpg');
+      options.image.saveToFile(this._tempFilepath, 'jpg');
 
       const intent = new android.content.Intent(Application.android.foregroundActivity, com.bezlepkin.photoeditor.PhotoEditorActivity.class);
       intent.putExtra('imagePath', this._tempFilepath);

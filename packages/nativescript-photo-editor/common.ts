@@ -20,17 +20,13 @@ export class PhotoEditorException extends Error {
 
 export const enum PhotoEditorControl {
   Crop = 0,
-  // Sticker = 1,
   Draw = 2,
   Text = 3,
-  // Save = 4,
-  // Share = 5,
   Clear = 6,
 }
 
-export type EditPhotoOptions = {
-  imageSource: ImageSource;
-  hiddenControls?: PhotoEditorControl[];
+export type PhotoEditorOptions = {
+  image: ImageSource;
 };
 
 export class PhotoEditorCommon extends Observable {}
