@@ -5,7 +5,8 @@
     "nativescript-keyboard-opening": "file:../../dist/packages/nativescript-keyboard-opening",
     "@bezlepkin/nativescript-photo-editor": "file:../../dist/packages/nativescript-photo-editor",
     "@bezlepkin/nativescript-keyboard-opening": "file:../../dist/packages/nativescript-keyboard-opening",
-    "@nativescript/nativescript-fab": "file:../../dist/packages/nativescript-fab"
+    "@nativescript/nativescript-fab": "file:../../dist/packages/nativescript-fab",
+    "@bezlepkin/nativescript-fab": "file:../../dist/packages/nativescript-fab"
   },
   "devDependencies": {
     "@nativescript/android": "~8.8.0",

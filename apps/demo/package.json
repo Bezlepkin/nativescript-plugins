@@ -4,6 +4,7 @@
   "license": "SEE LICENSE IN <your-license-filename>",
   "repository": "<fill-your-repository-here>",
   "dependencies": {
+    "@bezlepkin/nativescript-fab": "file:../../packages/nativescript-fab",
     "@bezlepkin/nativescript-keyboard-opening": "file:../../packages/nativescript-keyboard-opening",
     "@bezlepkin/nativescript-photo-editor": "file:../../packages/nativescript-photo-editor",
     "@nativescript/core": "file:../../node_modules/@nativescript/core",
@@ -11,6 +12,6 @@
   },
   "devDependencies": {
     "@nativescript/android": "~8.8.0",
-    "@nativescript/ios": "~8.8.0"
+    "@nativescript/ios": "8.6.4"
   }
 }

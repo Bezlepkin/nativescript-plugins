@@ -6,7 +6,16 @@
     "paths": {
       "~/*": ["src/*"],
       "@demo/shared": ["../../tools/demo/index.ts"],
-      "@bezlepkin/*": ["../../packages/*"]
+      "@bezlepkin/*": ["../../packages/*"],
+      "@bezlepkin/nativescript-fab": [
+        "../../packages/nativescript-fab/index.d.ts"
+      ],
+      "@bezlepkin/nativescript-keyboard-opening": [
+        "../../packages/nativescript-keyboard-opening/index.d.ts"
+      ],
+      "@bezlepkin/nativescript-photo-editor": [
+        "../../packages/nativescript-photo-editor/index.d.ts"
+      ]
     }
   }
 }

@@ -3,9 +3,10 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "packages/nativescript-photo-editor",
+  "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/js:tsc",
+      "executor": "@nx/js:tsc",
       "options": {
         "outputPath": "dist/packages/nativescript-photo-editor",
         "tsConfig": "packages/nativescript-photo-editor/tsconfig.json",
@@ -35,15 +36,14 @@
         "commands": ["node tools/scripts/build-finish.ts nativescript-photo-editor"],
         "parallel": false
       },
-      "outputs": ["dist/packages/nativescript-photo-editor"],
+      "outputs": ["{workspaceRoot}/dist/packages/nativescript-photo-editor"],
       "dependsOn": [
         {
           "target": "build.all",
-          "projects": "dependencies"
+          "dependencies": true
         },
         {
-          "target": "build",
-          "projects": "self"
+          "target": "build"
         }
       ]
     },
@@ -55,11 +55,7 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "options": {
-        "lintFilePatterns": ["packages/nativescript-photo-editor/**/*.ts"]
-      }
+      "executor": "@nx/eslint:lint"
     }
-  },
-  "tags": []
+  }
 }

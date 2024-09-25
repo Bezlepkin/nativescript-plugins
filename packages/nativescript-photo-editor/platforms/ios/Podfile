@@ -1,3 +1,1 @@
-# pod 'iOSPhotoEditor', :git => 'https://github.com/PeterStaev/photo-editor.git', :commit => '90004268a4a04e14d7bcae8f51083ccc3f915803'
-# pod 'iOSPhotoEditor', :path => '~/Documents/MiscProjects/photo-editor-ios'
-pod 'PhotoEditor', :git => 'https://github.com/Bezlepkin/PhotoEditor.git'
+pod 'PhotoEditor', :git => 'https://github.com/Bezlepkin/SWPhotoEditor.git'

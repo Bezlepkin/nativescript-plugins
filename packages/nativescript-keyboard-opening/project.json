@@ -3,9 +3,10 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "packages/nativescript-keyboard-opening",
+  "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/js:tsc",
+      "executor": "@nx/js:tsc",
       "options": {
         "outputPath": "dist/packages/nativescript-keyboard-opening",
         "tsConfig": "packages/nativescript-keyboard-opening/tsconfig.json",
@@ -35,15 +36,14 @@
         "commands": ["node tools/scripts/build-finish.ts nativescript-keyboard-opening"],
         "parallel": false
       },
-      "outputs": ["dist/packages/nativescript-keyboard-opening"],
+      "outputs": ["{workspaceRoot}/dist/packages/nativescript-keyboard-opening"],
       "dependsOn": [
         {
           "target": "build.all",
-          "projects": "dependencies"
+          "dependencies": true
         },
         {
-          "target": "build",
-          "projects": "self"
+          "target": "build"
         }
       ]
     },
@@ -55,11 +55,7 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "options": {
-        "lintFilePatterns": ["packages/nativescript-keyboard-opening/**/*.ts"]
-      }
+      "executor": "@nx/eslint:lint"
     }
-  },
-  "tags": []
+  }
 }
