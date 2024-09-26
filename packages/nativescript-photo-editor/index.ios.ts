@@ -1,4 +1,4 @@
-import { Frame, ImageSource } from '@nativescript/core';
+import { Application, Frame, ImageAsset, ImageSource } from '@nativescript/core';
 import { PhotoEditorCommon, PhotoEditorException, PhotoEditorOptions } from './common';
 
 export class PhotoEditor extends PhotoEditorCommon {
@@ -8,43 +8,39 @@ export class PhotoEditor extends PhotoEditorCommon {
     super();
   }
 
-  public editPhoto(options: PhotoEditorOptions) {
+  editPhoto(options: PhotoEditorOptions) {
     try {
-      if (!options.image) {
-        throw new Error('Required option "image" no passed');
-      }
-
       const photoEditorViewController = PhotoEditorViewController.alloc().init();
 
-      return new Promise<ImageSource>((resolve, reject) => {
+      return new Promise<ImageAsset>((resolve, reject) => {
         this._delegate = PhotoEditorDelegateImpl.initWithOwner(new WeakRef(this), resolve, reject);
 
         photoEditorViewController.image = options.image.ios;
         photoEditorViewController.photoEditorDelegate = this._delegate;
 
-        let viewController: UIViewController;
-        let topMostFrame = Frame.topmost();
+        let viewController = Application.ios.rootController;
 
-        if (topMostFrame) {
-          viewController = topMostFrame.currentPage && topMostFrame.currentPage.ios;
-          photoEditorViewController.modalPresentationStyle = UIModalPresentationStyle.FullScreen;
-          viewController.presentViewControllerAnimatedCompletion(photoEditorViewController, true, null);
+        while (viewController && viewController.presentedViewController) {
+          viewController = viewController.presentedViewController;
         }
+
+        photoEditorViewController.modalPresentationStyle = UIModalPresentationStyle.FullScreen;
+        viewController.presentViewControllerAnimatedCompletion(photoEditorViewController, true, null);
       });
     } catch (e) {
-      throw new PhotoEditorException(`PhotoEditor plugin error: ${e.message}`);
+      console.error(`PhotoEditor plugin error: ${e.message}`);
     }
   }
 }
 
 @NativeClass
 class PhotoEditorDelegateImpl extends NSObject implements PhotoEditorDelegate {
-  private _resolve: (imagesSource: ImageSource) => void;
+  private _resolve: (image: ImageAsset) => void;
   private _reject: (e: Error) => void;
   private _owner: WeakRef<PhotoEditor>;
   static ObjCProtocols = [PhotoEditorDelegate];
 
-  public static initWithOwner(owner: WeakRef<PhotoEditor>, resolve: (imageSource: ImageSource) => void, reject: (e: Error) => void): PhotoEditorDelegateImpl {
+  public static initWithOwner(owner: WeakRef<PhotoEditor>, resolve: (image: ImageAsset) => void, reject: (e: Error) => void): PhotoEditorDelegateImpl {
     const delegate = <PhotoEditorDelegateImpl>PhotoEditorDelegateImpl.new();
     delegate._resolve = resolve;
     delegate._reject = reject;
@@ -58,10 +54,8 @@ class PhotoEditorDelegateImpl extends NSObject implements PhotoEditorDelegate {
   }
 
   public doneEditingWithImage(image: UIImage) {
-    const result = new ImageSource();
-
-    result.setNativeSource(image);
-
-    this._resolve(result);
+    const imageSource = new ImageSource();
+    imageSource.setNativeSource(image);
+    this._resolve(new ImageAsset(imageSource.ios));
   }
 }
