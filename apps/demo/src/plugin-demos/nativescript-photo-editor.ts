@@ -1,6 +1,6 @@
 import { PhotoEditor } from '@bezlepkin/nativescript-photo-editor';
 import {
-  EditPhotoOptions,
+  PhotoEditorOptions,
   PhotoEditorException,
 } from '@bezlepkin/nativescript-photo-editor/common';
 import { DemoSharedNativescriptPhotoEditor } from '@demo/shared';
@@ -30,11 +30,10 @@ export class DemoModel extends DemoSharedNativescriptPhotoEditor {
         'https://safarisafricana.com/wp-content/uploads/2019/12/malaria-free-safaris.jpg',
       );
 
-      const options: EditPhotoOptions = { imageSource };
+      const options: PhotoEditorOptions = { image: imageSource };
       const imageAsset = await this._photoEditor.editPhoto(options);
     } catch (e) {
-      console.log(e instanceof PhotoEditorException);
-      console.error(e);
+      console.error(e.message);
     }
   }
 }

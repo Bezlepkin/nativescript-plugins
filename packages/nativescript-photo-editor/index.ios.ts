@@ -1,5 +1,5 @@
-import { Application, Frame, ImageAsset, ImageSource } from '@nativescript/core';
-import { PhotoEditorCommon, PhotoEditorException, PhotoEditorOptions } from './common';
+import { Application, ImageAsset, ImageSource } from '@nativescript/core';
+import { PhotoEditorCommon, PhotoEditorError, PhotoEditorOptions } from './common';
 
 export class PhotoEditor extends PhotoEditorCommon {
   private _delegate: PhotoEditorDelegateImpl;
@@ -32,7 +32,7 @@ export class PhotoEditor extends PhotoEditorCommon {
         viewController.presentViewControllerAnimatedCompletion(photoEditorViewController, true, null);
       });
     } catch (e) {
-      throw new PhotoEditorException(`PhotoEditor plugin error occurred. ${e.message}`);
+      throw new PhotoEditorError(`PhotoEditor plugin error occurred. ${e.message}`);
     }
   }
 }
@@ -54,7 +54,7 @@ class PhotoEditorDelegateImpl extends NSObject implements PhotoEditorDelegate {
   }
 
   public canceledEditing() {
-    this._reject(new Error('User cancelled edit.'));
+    this._reject(new PhotoEditorError('PhotoEditor plugin error occurred. The user has canceled the edit'));
   }
 
   public doneEditingWithImage(image: UIImage) {
