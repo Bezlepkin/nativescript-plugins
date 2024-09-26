@@ -1,5 +1,5 @@
-import { Application, ImageAsset, ImageSource } from '@nativescript/core';
-import { PhotoEditorCommon, PhotoEditorOptions } from './common';
+import { Application, Frame, ImageAsset, ImageSource } from '@nativescript/core';
+import { PhotoEditorCommon, PhotoEditorException, PhotoEditorOptions } from './common';
 
 export class PhotoEditor extends PhotoEditorCommon {
   private _delegate: PhotoEditorDelegateImpl;
@@ -8,8 +8,12 @@ export class PhotoEditor extends PhotoEditorCommon {
     super();
   }
 
-  editPhoto(options: PhotoEditorOptions) {
+  public editPhoto(options: PhotoEditorOptions) {
     try {
+      if (!options.image) {
+        throw new Error('Required option "image" no passed');
+      }
+
       const photoEditorViewController = PhotoEditorViewController.alloc().init();
 
       return new Promise<ImageAsset>((resolve, reject) => {
@@ -28,7 +32,7 @@ export class PhotoEditor extends PhotoEditorCommon {
         viewController.presentViewControllerAnimatedCompletion(photoEditorViewController, true, null);
       });
     } catch (e) {
-      console.error(`PhotoEditor plugin error: ${e.message}`);
+      throw new PhotoEditorException(`PhotoEditor plugin error occurred. ${e.message}`);
     }
   }
 }
