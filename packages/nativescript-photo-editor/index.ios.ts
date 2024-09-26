@@ -32,7 +32,7 @@ export class PhotoEditor extends PhotoEditorCommon {
         viewController.presentViewControllerAnimatedCompletion(photoEditorViewController, true, null);
       });
     } catch (e) {
-      throw new PhotoEditorError(`PhotoEditor plugin error occurred. ${e.message}`);
+      throw new PhotoEditorError(e.message);
     }
   }
 }
@@ -54,7 +54,7 @@ class PhotoEditorDelegateImpl extends NSObject implements PhotoEditorDelegate {
   }
 
   public canceledEditing() {
-    this._reject(new PhotoEditorError('PhotoEditor plugin error occurred. The user has canceled the edit'));
+    this._reject(new PhotoEditorError('The user has canceled the edit'));
   }
 
   public doneEditingWithImage(image: UIImage) {

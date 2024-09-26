@@ -1,5 +1,5 @@
 import { AndroidActivityResultEventData, Application, File, ImageAsset, knownFolders, path } from '@nativescript/core';
-import { PhotoEditorCommon, PhotoEditorException, PhotoEditorOptions } from './common';
+import { PhotoEditorCommon, PhotoEditorError, PhotoEditorOptions } from './common';
 
 declare const com: any;
 
@@ -12,7 +12,7 @@ export class PhotoEditor extends PhotoEditorCommon {
 
   editPhoto(options: PhotoEditorOptions): Promise<ImageAsset> {
     if (!options.image) {
-      throw new PhotoEditorException('PhotoEditor error. Required option "imageSource" no passed');
+      throw new PhotoEditorError('Required option "image" no passed');
     }
 
     return new Promise<ImageAsset>((resolve, reject) => {
@@ -44,7 +44,7 @@ export class PhotoEditor extends PhotoEditorCommon {
           break;
 
         default:
-          this._currentReject(new PhotoEditorException(`There was an unknown error while editing a photo with code: ${args.resultCode}`));
+          this._currentReject(new PhotoEditorError(`There was an unknown error while editing a photo with code: ${args.resultCode}`));
           break;
       }
 
