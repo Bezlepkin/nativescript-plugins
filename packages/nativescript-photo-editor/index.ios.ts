@@ -1,5 +1,5 @@
-import { Application, Frame, ImageAsset, ImageSource } from '@nativescript/core';
-import { PhotoEditorCommon, PhotoEditorException, PhotoEditorOptions } from './common';
+import { Application, ImageAsset, ImageSource } from '@nativescript/core';
+import { PhotoEditorCommon, PhotoEditorOptions } from './common';
 
 export class PhotoEditor extends PhotoEditorCommon {
   private _delegate: PhotoEditorDelegateImpl;
