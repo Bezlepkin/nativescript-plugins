@@ -1,4 +1,7 @@
 # @bezlepkin/nativescript-keyboard-opening
+[![NPM Version][npm-version-image]][npm-url]
+[![NPM Downloads][npm-downloads-image]][npm-url]
+
 A plugin that allows you to track keyboard opening, changing, closing and returns keyboard height.
 
 ```javascript
@@ -31,3 +34,7 @@ keyboardOpening().off('closed');
 
 ## License
 Apache License Version 2.0
+
+[npm-url]: https://www.npmjs.com/package/@bezlepkin/nativescript-keyboard-opening
+[npm-version-image]: https://badgen.net/npm/v/type-is
+[npm-downloads-image]: https://badgen.net/npm/dm/type-is
