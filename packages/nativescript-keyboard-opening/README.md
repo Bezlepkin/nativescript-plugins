@@ -36,5 +36,5 @@ keyboardOpening().off('closed');
 Apache License Version 2.0
 
 [npm-url]: https://www.npmjs.com/package/@bezlepkin/nativescript-keyboard-opening
-[npm-version-image]: https://badgen.net/npm/v/type-is
-[npm-downloads-image]: https://badgen.net/npm/dm/type-is
+[npm-version-image]: https://badgen.net/npm/v/@bezlepkin/nativescript-keyboard-opening
+[npm-downloads-image]: https://badgen.net/npm/dm/@bezlepkin/nativescript-keyboard-opening
