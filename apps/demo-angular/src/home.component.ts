@@ -15,5 +15,8 @@ export class HomeComponent {
     {
       name: 'nativescript-photo-editor',
     },
+    {
+      name: 'nativescript-video-thumbnail',
+    },
   ];
 }

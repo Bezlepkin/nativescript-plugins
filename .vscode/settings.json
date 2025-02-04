@@ -4,13 +4,15 @@
     "**/apps/demo-angular": false,
     "**/packages/nativescript-fab": false,
     "**/packages/nativescript-keyboard-opening": false,
-    "**/packages/nativescript-photo-editor": false
+    "**/packages/nativescript-photo-editor": false,
+    "**/packages/nativescript-video-thumbnail": false
   },
   "search.exclude": {
     "**/apps/demo": false,
     "**/apps/demo-angular": false,
     "**/packages/nativescript-fab": false,
     "**/packages/nativescript-keyboard-opening": false,
-    "**/packages/nativescript-photo-editor": false
+    "**/packages/nativescript-photo-editor": false,
+    "**/packages/nativescript-video-thumbnail": false
   }
 }

@@ -1,0 +1,14 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <Page.actionBar>
+        <ActionBar title="nativescript-video-thumbnail" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+    <StackLayout class="p-20">
+        <ScrollView class="h-full">
+          <StackLayout>
+            <Button text="Take video from camera" tap="{{ onTakeVideoFromCameraTap }}" class="btn btn-primary"/>
+            <Image stretch="aspectFill" src="{{ thumbnail }}" marginTop="32" />
+          </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</Page>

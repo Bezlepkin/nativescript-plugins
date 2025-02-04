@@ -7,7 +7,8 @@
       "@bezlepkin/*": ["../../dist/packages/*"],
       "@bezlepkin/nativescript-fab": ["../../packages/nativescript-fab/index.d.ts"],
       "@bezlepkin/nativescript-keyboard-opening": ["../../packages/nativescript-keyboard-opening/index.d.ts"],
-      "@bezlepkin/nativescript-photo-editor": ["../../packages/nativescript-photo-editor/index.d.ts"]
+      "@bezlepkin/nativescript-photo-editor": ["../../packages/nativescript-photo-editor/index.d.ts"],
+      "@bezlepkin/nativescript-video-thumbnail": ["../../packages/nativescript-video-thumbnail/index.d.ts"]
     }
   },
   "files": ["./references.d.ts", "./src/main.ts", "./src/polyfills.ts"],

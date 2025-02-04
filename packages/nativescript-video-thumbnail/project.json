@@ -1,0 +1,65 @@
+{
+  "name": "nativescript-video-thumbnail",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/nativescript-video-thumbnail",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "options": {
+        "outputPath": "dist/packages/nativescript-video-thumbnail",
+        "tsConfig": "packages/nativescript-video-thumbnail/tsconfig.json",
+        "packageJson": "packages/nativescript-video-thumbnail/package.json",
+        "main": "packages/nativescript-video-thumbnail/index.d.ts",
+        "assets": [
+          "packages/nativescript-video-thumbnail/*.md",
+          "packages/nativescript-video-thumbnail/index.d.ts",
+          "LICENSE",
+          {
+            "glob": "**/*",
+            "input": "packages/nativescript-video-thumbnail/platforms/",
+            "output": "./platforms/"
+          }
+        ],
+        "dependsOn": [
+          {
+            "target": "build.all",
+            "projects": "dependencies"
+          }
+        ]
+      }
+    },
+    "build.all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["node tools/scripts/build-finish.ts nativescript-video-thumbnail"],
+        "parallel": false
+      },
+      "outputs": ["{workspaceRoot}/dist/packages/nativescript-video-thumbnail"],
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "projects": "dependencies"
+        },
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ]
+    },
+    "focus": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-video-thumbnail"],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/nativescript-video-thumbnail/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

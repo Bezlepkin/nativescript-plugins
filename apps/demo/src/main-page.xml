@@ -9,8 +9,9 @@
           class="btn btn-primary view-demo" />
         <Button text="nativescript-keyboard-opening" tap="{{ viewDemo }}"
           class="btn btn-primary view-demo" />
-<Button text="nativescript-fab" tap="{{ viewDemo }}" class="btn btn-primary view-demo"/>
-
+        <Button text="nativescript-fab" tap="{{ viewDemo }}" class="btn btn-primary view-demo" />
+        <Button text="nativescript-video-thumbnail" tap="{{ viewDemo }}"
+          class="btn btn-primary view-demo" />
       </StackLayout>
     </ScrollView>
   </StackLayout>

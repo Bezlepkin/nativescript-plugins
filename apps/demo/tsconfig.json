@@ -15,6 +15,12 @@
       ],
       "@bezlepkin/nativescript-photo-editor": [
         "../../packages/nativescript-photo-editor/index.d.ts"
+      ],
+      "nativescript-video-thumbnail": [
+        "../../packages/nativescript-video-thumbnail/index.d.ts"
+      ],
+      "@bezlepkin/nativescript-video-thumbnail": [
+        "../../packages/nativescript-video-thumbnail/index.d.ts"
       ]
     }
   }

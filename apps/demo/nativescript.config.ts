@@ -1,9 +1,10 @@
 import { NativeScriptConfig } from '@nativescript/core';
 
 export default {
-  id: 'org.nativescript.plugindemo',
+  id: 'com.bezlepkin.nativescript-plugins',
   appResourcesPath: '../../tools/assets/App_Resources',
   android: {
+    id: 'com.bezlepkin.nsplugins',
     v8Flags: '--expose_gc',
     markingMode: 'none',
   },

@@ -35,6 +35,20 @@ module.exports = {
           description: '⚆  Run Android  🤖',
         },
       },
+      demo2: {
+        clean: {
+          script: 'nx run demo2:clean',
+          description: '⚆  Clean  🧹',
+        },
+        ios: {
+          script: 'nx run demo2:ios',
+          description: '⚆  Run iOS  ',
+        },
+        android: {
+          script: 'nx run demo2:android',
+          description: '⚆  Run Android  🤖',
+        },
+      },
       '...Angular...': {
         script: `npx cowsay "Test all the Angles!"`,
         description: ` 🔻 Angular`,
@@ -82,6 +96,20 @@ module.exports = {
           description: 'nativescript/nativescript-fab: Build',
         },
       },
+      // nativescript-video-thumbnail
+      'nativescript-video-thumbnail': {
+        build: {
+          script: 'nx run nativescript-video-thumbnail:build.all',
+          description: 'nativescript-video-thumbnail: Build',
+        },
+      },
+      // @bezlepkin/nativescript-video-thumbnail
+      'nativescript-video-thumbnail': {
+        build: {
+          script: 'nx run nativescript-video-thumbnail:build.all',
+          description: '@bezlepkin/nativescript-video-thumbnail: Build',
+        },
+      },
       'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
@@ -103,6 +131,14 @@ module.exports = {
       'nativescript-fab': {
         script: 'nx run nativescript-fab:focus',
         description: 'Focus on nativescript/nativescript-fab',
+      },
+      'nativescript-video-thumbnail': {
+        script: 'nx run nativescript-video-thumbnail:focus',
+        description: 'Focus on nativescript-video-thumbnail',
+      },
+      'nativescript-video-thumbnail': {
+        script: 'nx run nativescript-video-thumbnail:focus',
+        description: 'Focus on @bezlepkin/nativescript-video-thumbnail',
       },
       reset: {
         script: 'nx g @nativescript/plugin-tools:focus-packages',

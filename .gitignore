@@ -45,3 +45,5 @@ packages/**/angular/dist
 
 .nx/cache
 .nx/workspace-data
+
+plugin-development-guide.txt

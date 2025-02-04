@@ -1,8 +1,5 @@
 import { PhotoEditor } from '@bezlepkin/nativescript-photo-editor';
-import {
-  PhotoEditorOptions,
-  PhotoEditorException,
-} from '@bezlepkin/nativescript-photo-editor/common';
+import { PhotoEditorOptions } from '@bezlepkin/nativescript-photo-editor/common';
 import { DemoSharedNativescriptPhotoEditor } from '@demo/shared';
 import { EventData, ImageSource, Page } from '@nativescript/core';
 

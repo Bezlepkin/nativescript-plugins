@@ -24,7 +24,9 @@
       "@bezlepkin/nativescript-photo-editor": ["packages/nativescript-photo-editor/index.d.ts"],
       "@demo/shared": ["tools/demo/index.ts"],
       "@nativescript/nativescript-fab": ["packages/nativescript-fab/index.d.ts"],
-      "@bezlepkin/*": ["packages/*"]
+      "@bezlepkin/*": ["packages/*"],
+      "nativescript-video-thumbnail": ["packages/nativescript-video-thumbnail/index.d.ts"],
+      "@bezlepkin/nativescript-video-thumbnail": ["packages/nativescript-video-thumbnail/index.d.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
